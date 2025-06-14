@@ -26,11 +26,45 @@
 
 
 import { useAuth } from '../context/AuthContext';
+import { useEffect } from 'react';
+
 
 export default function Profile() {
   const { user } = useAuth();
 
   let userData = {};
+
+  useEffect(() => {
+    // If user data is not available, we can log it or handle it accordingly
+    if (!user) {
+      console.warn("User data is not available yet.");
+    }
+    let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // You can show a custom "Install App" button
+});
+
+function handleInstallClick() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(choice => {
+      if (choice.outcome === "accepted") {
+        console.log("User installed the app");
+      } else {
+        console.log("User dismissed the install prompt");
+      }
+      deferredPrompt = null;
+    });
+  }
+}
+handleInstallClick();
+  }, []);
+
+
+
 
   // If user data is loading
   if (!user) {

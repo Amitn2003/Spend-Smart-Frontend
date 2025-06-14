@@ -490,7 +490,7 @@ console.log('Unique categories:', uniqueCategories);
       {/* <ExpenseForm onSubmit={handleAdd} />  */}
       {filtered.expenses != undefined && filtered.expenses.length > 0 && <ExpenseChart data={filtered} />}
       {filtered.expenses != undefined && filtered.expenses.length > 0 && <ExpenseChart2 data={filtered} />}
-      <ExpenseFilter categories={uniqueCategories} setFilter={setFilter} />
+      {/* <ExpenseFilter categories={uniqueCategories} setFilter={setFilter} /> */}
       <ExpenseList entries={filtered} />
     </div>
   );

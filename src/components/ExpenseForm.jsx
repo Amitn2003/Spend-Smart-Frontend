@@ -75,69 +75,114 @@ export default function Dashboard() {
 
   // Don't proceed if there are no expenses (empty filtered array)
   if (filtered.length === 0) {
-    //   <div className="max-w-3xl mx-auto py-10"> 
-    //     <form onSubmit={handleAdd} className="grid grid-cols-2 gap-4 mb-10">
+   
+    //       <div className="max-w-3xl mx-auto py-10 px-4">
+    //   <form
+    //     onSubmit={handleAdd}
+    //     className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10"
+    //   >
+    //     {/* Amount Input */}
+    //     <div className="flex flex-col">
+    //       <label htmlFor="amount" className="text-sm font-medium text-gray-700 mb-1">Amount</label>
     //       <input
+    //         id="amount"
     //         type="number"
-    //         placeholder="Amount"
-    //         className="border p-2"
+    //         placeholder="₹0.00"
+    //         className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
     //         value={form.amount}
     //         onChange={(e) => setForm({ ...form, amount: +e.target.value })}
     //       />
+    //     </div>
+    
+    //     {/* Type Selector */}
+    //     <div className="flex flex-col">
+    //       <label htmlFor="type" className="text-sm font-medium text-gray-700 mb-1">Type</label>
     //       <select
+    //         id="type"
     //         required
     //         value={form.type}
     //         onChange={(e) => setForm({ ...form, type: e.target.value })}
-    //         className="p-2 border rounded"
+    //         className="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
     //       >
     //         <option value="expense">Expense</option>
     //         <option value="income">Income</option>
     //       </select>
-
+    //     </div>
+    
+    //     {/* Category Input */}
+    //     <div className="flex flex-col">
+    //       <label htmlFor="category" className="text-sm font-medium text-gray-700 mb-1">Category</label>
     //       <input
+    //         id="category"
     //         type="text"
     //         placeholder="Category"
-    //         className="border p-2"
+    //         className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
     //         value={form.category}
     //         onChange={(e) => setForm({ ...form, category: e.target.value })}
     //       />
+    //     </div>
+    
+    //     {/* Subcategory Input */}
+    //     <div className="flex flex-col">
+    //       <label htmlFor="subcategory" className="text-sm font-medium text-gray-700 mb-1">Subcategory (optional)</label>
     //       <input
+    //         id="subcategory"
     //         type="text"
-    //         placeholder="Subcategory (optional)"
-    //         className="border p-2"
+    //         placeholder="Subcategory"
+    //         className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
     //         value={form.subcategory}
     //         onChange={(e) => setForm({ ...form, subcategory: e.target.value })}
     //       />
+    //     </div>
+    
+    //     {/* Note Input */}
+    //     <div className="flex flex-col">
+    //       <label htmlFor="note" className="text-sm font-medium text-gray-700 mb-1">Note (optional)</label>
     //       <input
+    //         id="note"
     //         type="text"
-    //         placeholder="Note (optional)"
-    //         className="border p-2"
+    //         placeholder="Note"
+    //         className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
     //         value={form.note}
     //         onChange={(e) => setForm({ ...form, note: e.target.value })}
     //       />
+    //     </div>
+    
+    //     {/* Date Input */}
+    //     <div className="flex flex-col">
+    //       <label htmlFor="date" className="text-sm font-medium text-gray-700 mb-1">Date</label>
     //       <input
+    //         id="date"
     //         type="date"
-    //         className="border p-2"
+    //         className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
     //         value={form.date}
     //         onChange={(e) => setForm({ ...form, date: e.target.value })}
     //       />
-    //       <button className="col-span-2 bg-blue-600 text-white py-2">Add Entry</button>
-    //     </form>
-    //  </div>
+    //     </div>
+    
+    //     {/* Submit Button */}
+    //     <button
+    //       type="submit"
+    //       className="col-span-2 bg-blue-600 text-white py-3 rounded-lg mt-4 hover:bg-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+    //     >
+    //       Add Entry
+    //     </button>
+    //   </form>
+    // </div>
     return (
-      <div className="max-w-3xl mx-auto py-10 px-4">
+      <div className="max-w-3xl mx-auto py-10 px-6 bg-white rounded-lg shadow-xl">
   <form
     onSubmit={handleAdd}
     className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10"
   >
     {/* Amount Input */}
     <div className="flex flex-col">
-      <label htmlFor="amount" className="text-sm font-medium text-gray-700 mb-1">Amount</label>
+      <label htmlFor="amount" className="text-sm font-medium text-gray-700 mb-2">Amount</label>
       <input
         id="amount"
         type="number"
         placeholder="₹0.00"
-        className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
+        className="border border-gray-300 p-4 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
         value={form.amount}
         onChange={(e) => setForm({ ...form, amount: +e.target.value })}
       />
@@ -145,13 +190,13 @@ export default function Dashboard() {
 
     {/* Type Selector */}
     <div className="flex flex-col">
-      <label htmlFor="type" className="text-sm font-medium text-gray-700 mb-1">Type</label>
+      <label htmlFor="type" className="text-sm font-medium text-gray-700 mb-2">Type</label>
       <select
         id="type"
         required
         value={form.type}
         onChange={(e) => setForm({ ...form, type: e.target.value })}
-        className="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
+        className="p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
       >
         <option value="expense">Expense</option>
         <option value="income">Income</option>
@@ -160,12 +205,12 @@ export default function Dashboard() {
 
     {/* Category Input */}
     <div className="flex flex-col">
-      <label htmlFor="category" className="text-sm font-medium text-gray-700 mb-1">Category</label>
+      <label htmlFor="category" className="text-sm font-medium text-gray-700 mb-2">Category</label>
       <input
         id="category"
         type="text"
         placeholder="Category"
-        className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
+        className="border border-gray-300 p-4 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
         value={form.category}
         onChange={(e) => setForm({ ...form, category: e.target.value })}
       />
@@ -173,12 +218,12 @@ export default function Dashboard() {
 
     {/* Subcategory Input */}
     <div className="flex flex-col">
-      <label htmlFor="subcategory" className="text-sm font-medium text-gray-700 mb-1">Subcategory (optional)</label>
+      <label htmlFor="subcategory" className="text-sm font-medium text-gray-700 mb-2">Subcategory (optional)</label>
       <input
         id="subcategory"
         type="text"
         placeholder="Subcategory"
-        className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
+        className="border border-gray-300 p-4 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
         value={form.subcategory}
         onChange={(e) => setForm({ ...form, subcategory: e.target.value })}
       />
@@ -186,12 +231,12 @@ export default function Dashboard() {
 
     {/* Note Input */}
     <div className="flex flex-col">
-      <label htmlFor="note" className="text-sm font-medium text-gray-700 mb-1">Note (optional)</label>
+      <label htmlFor="note" className="text-sm font-medium text-gray-700 mb-2">Note (optional)</label>
       <input
         id="note"
         type="text"
         placeholder="Note"
-        className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
+        className="border border-gray-300 p-4 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
         value={form.note}
         onChange={(e) => setForm({ ...form, note: e.target.value })}
       />
@@ -199,11 +244,11 @@ export default function Dashboard() {
 
     {/* Date Input */}
     <div className="flex flex-col">
-      <label htmlFor="date" className="text-sm font-medium text-gray-700 mb-1">Date</label>
+      <label htmlFor="date" className="text-sm font-medium text-gray-700 mb-2">Date</label>
       <input
         id="date"
         type="date"
-        className="border border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
+        className="border border-gray-300 p-4 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
         value={form.date}
         onChange={(e) => setForm({ ...form, date: e.target.value })}
       />
@@ -212,7 +257,7 @@ export default function Dashboard() {
     {/* Submit Button */}
     <button
       type="submit"
-      className="col-span-2 bg-blue-600 text-white py-3 rounded-lg mt-4 hover:bg-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+      className="col-span-2 bg-blue-600 text-white py-4 rounded-lg mt-6 hover:bg-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
     >
       Add Entry
     </button>

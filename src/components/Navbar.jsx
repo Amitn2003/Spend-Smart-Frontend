@@ -204,7 +204,7 @@ export default function Navbar() {
           <header className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
               <Link to="/" className="hover:underline hover:text-indigo-600 hover:cursor-pointer">
-                <h1 className="text-2xl font-bold text-indigo-600">BudgetWise</h1>
+                <h1 className="text-2xl font-bold text-indigo-600">PaisaManager</h1>
               </Link>
               <nav className="space-x-4">
                 <a href="#features" className="hover:text-indigo-600 text-indigo-500">Features</a>
@@ -238,7 +238,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="bg-gray-800 text-white p-4 flex justify-between">
+    <nav className="bg-gray-800 text-white p-4 flex justify-between sm:mb-8 mb-2">
       <div className="space-x-4">
         <header className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
           <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -259,11 +259,11 @@ export default function Navbar() {
                 <Link to="/profile" className="hover:underline text-indigo-600">
                   Profile
                 </Link>
-                <Link to="/settings" className="hover:underline text-indigo-600">
+                {/* <Link to="/settings" className="hover:underline text-indigo-600">
                   Settings
-                </Link>
+                </Link> */}
                 <span className="mx-2">Hi, {username || "Guest"}</span>
-                <button onClick={logout} className="bg-red-500 px-3 py-1 rounded">
+                <button onClick={logout} className="bg-red-100 text-slate-900 px-3 py-1 rounded">
                   Logout
                 </button>
               </nav>
@@ -271,6 +271,7 @@ export default function Navbar() {
           </div>
         </header>
       </div>
+      <br />
     </nav>
   );
 }

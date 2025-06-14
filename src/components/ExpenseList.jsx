@@ -36,7 +36,7 @@ const redirectFunc = () => {
   window.location.href = '/add';
 };
 export default function ExpenseList({ entries }) {
-  // console.log('Rendering ExpenseList with entries:', entries.expenses);
+  console.log('Rendering ExpenseList with entries:', entries);
 
   const newData = entries.expenses || [];
 

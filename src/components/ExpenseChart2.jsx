@@ -63,7 +63,8 @@ export default function ExpenseChart2({ data }) {
 
   return (
     <>
-      <h2 className="text-xl font-semibold mb-4 text-center text-gray-800">Expense Breakdown by Category</h2>
+
+      <h2 className="sm:mt-20 text-xl font-semibold mb-4 text-center text-gray-800 mt-4 sm:m-12 md:mt-8">Expense Breakdown by Category</h2>
       <ResponsiveContainer width="100%" height={400}> {/* Increased height for better visibility */}
         <BarChart data={chartData}>
           {/* Smooth grid lines */}

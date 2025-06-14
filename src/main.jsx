@@ -6,9 +6,21 @@ import App from './App.jsx'
 
 import { AuthProvider } from './context/AuthContext.jsx';
 
-import { registerSW } from 'virtual:pwa-register';
+// import { registerSW } from 'virtual:pwa-register';
 
-registerSW(); // Registers service worker
+// registerSW(); // Registers service worker
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/serviceWorker.js")
+      .then(reg => console.log("✅ Service Worker registered:", reg.scope))
+      .catch(err => console.error("❌ Service Worker registration failed:", err));
+  });
+}
+
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
