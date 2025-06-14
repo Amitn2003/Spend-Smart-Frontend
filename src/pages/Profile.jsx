@@ -1,36 +1,9 @@
-// import { useAuth } from '../context/AuthContext';
-
-// export default function Profile() {
-//   const { user } = useAuth();
-//   // console.log('User data:', JSON.parse(user));
-//   const userData = {};
-//   if (!user) {
-//     return <p className="text-center text-red-500">Loading user data...</p>;
-//   }else {
-//     userData = user ? JSON.parse(user) : {};
-//   }
-//   return (
-//     <div className="max-w-2xl mx-auto p-8 mt-10 bg-white shadow-md rounded">
-//       <h2 className="text-2xl font-bold mb-4">👤 Profile</h2>
-//       <div className="space-y-3">
-//         <p><strong>Name:</strong> {(user && userData.username) || "N/A"}</p>
-//         {/* <p><strong>Username:</strong> {user?.user_name || "N/A"}</p> */}
-//         <p><strong>Email:</strong> {(user && userData.email) || "N/A"}</p>
-//         {/* <p><strong>Phone:</strong> {user?.phone || "N/A"}</p> */}
-//         {/* <p><strong>Age:</strong> {user?.age || "N/A"}</p> */}
-//         {/* <p><strong>Gender:</strong> {user?.gender || "N/A"}</p> */}
-//       </div>
-//     </div>
-//   );
-// }
-
-
 import { useAuth } from '../context/AuthContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 
 export default function Profile() {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
 
   let userData = {};
 
@@ -85,14 +58,55 @@ handleInstallClick();
     userData = { username: "N/A", email: "N/A" };
   }
 
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+  
+    useEffect(() => {
+      const handler = (e) => {
+        e.preventDefault();
+        setDeferredPrompt(e);
+      };
+  
+      window.addEventListener('beforeinstallprompt', handler);
+  
+      return () => window.removeEventListener('beforeinstallprompt', handler);
+    }, []);
+  
+    const handleInstall = async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const choice = await deferredPrompt.userChoice;
+        if (choice.outcome === 'accepted') {
+          console.log('PWA installed');
+          setDeferredPrompt(null);
+        }
+      }
+    };
+
   return (
     <div className="max-w-2xl mx-auto p-8 mt-10 bg-white shadow-md rounded">
       <h2 className="text-2xl font-bold mb-4">👤 Profile</h2>
       <div className="space-y-3">
         <p><strong>Name:</strong> {userData.username || "N/A"}</p>
         <p><strong>Email:</strong> {userData.email || "N/A"}</p>
+        <p><strong>Role:</strong> {userData.role || "N/A"}</p>
+        <p><strong>UserId:</strong> {userData.id || "N/A"}</p>
         {/* Add additional fields as needed */}
       </div>
+
+      
+      <button onClick={logout} className="bg-red-100 text-slate-900 px-1 py-1 rounded cursor-pointer mt-4">
+                  Logout
+                </button>
+
+
+    {deferredPrompt && (
+        <button
+          onClick={handleInstall}
+          className="mt-4 bg-green-600 text-white px-4 py-2 rounded"
+        >
+          📲 Install App
+        </button>
+      )}
     </div>
   );
 }
