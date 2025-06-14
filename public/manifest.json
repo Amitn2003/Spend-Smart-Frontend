@@ -1,6 +1,6 @@
 {
-  "name": "Budget & Expense Tracker",
-  "short_name": "BudgetApp",
+  "name": "Spending Smart",
+  "short_name": "SpendingSmart",
   "description": "Track your daily income, expenses, and budget smartly.",
   "start_url": "/",
   "scope": "/",
@@ -11,13 +11,13 @@
   "lang": "en",
   "icons": [
     {
-      "src": "/icon-192x192.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
