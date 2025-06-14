@@ -13,8 +13,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Budget Tracker',
-        short_name: 'BudgetApp',
+        name: 'Paisa Manager',
+        short_name: 'PaisaManager',
         description: 'Track income and expenses with insights.',
         theme_color: '#1f2937', // Tailwind gray-800
         background_color: '#ffffff',

@@ -1,6 +1,6 @@
 {
-  "name": "Spending Smart",
-  "short_name": "SpendingSmart",
+  "name": "Paisa Manager",
+  "short_name": "PaisaManager",
   "description": "Track your daily income, expenses, and budget smartly.",
   "start_url": "/",
   "scope": "/",

@@ -101,6 +101,61 @@
 // }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
@@ -152,9 +207,9 @@ export default function Navbar() {
                 <h1 className="text-2xl font-bold text-indigo-600">BudgetWise</h1>
               </Link>
               <nav className="space-x-4">
-                <a href="#features" className="hover:text-indigo-600">Features</a>
-                <a href="#how-it-works" className="hover:text-indigo-600">How It Works</a>
-                <a href="#testimonials" className="hover:text-indigo-600">Testimonials</a>
+                <a href="#features" className="hover:text-indigo-600 text-indigo-500">Features</a>
+                <a href="#how-it-works" className="hover:text-indigo-600 text-indigo-500">How It Works</a>
+                <a href="#testimonials" className="hover:text-indigo-600 text-indigo-500">Testimonials</a>
                 <Link
                   to="/login"
                   className="text-indigo-600 border px-4 py-2 rounded hover:bg-indigo-50"

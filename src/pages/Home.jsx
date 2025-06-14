@@ -255,7 +255,7 @@ const Home = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-100 p-6 rounded-lg">
               <p className="italic mb-4">
-                "BudgetWise changed how I manage money. I finally feel in control of
+                "PaisaManager changed how I manage money. I finally feel in control of
                 my finances."
               </p>
               <h5 className="font-semibold text-indigo-600">— Sayak A.</h5>
@@ -304,7 +304,7 @@ const Home = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-6 text-center">
-          <p className="mb-2">© 2025 BudgetWise. All rights reserved.</p>
+          <p className="mb-2">© 2025 PaisaManager. All rights reserved.</p>
           <div className="space-x-4">
             <a href="/login" className="hover:underline">
               Login
