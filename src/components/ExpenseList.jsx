@@ -30,6 +30,7 @@
 
 import React from 'react';
 import { redirect, useNavigate } from 'react-router-dom';
+import EmptyState from './EmptyState';
 // import dayjs from 'dayjs'; // For date formatting
 // const navigate = useNavigate();
 const redirectFunc = () => {
@@ -46,9 +47,12 @@ export default function ExpenseList({ entries }) {
   }
 
   if (newData.length === 0) {
-    return <p>No expenses found. Add some expenses! 
-      <button onClick={() => { redirectFunc() }} className="text-blue-500 hover:underline p-2 m-2 bg-gray-100 hover:cursor-pointer">Add Expense</button>
-      </p>;
+    // <p>No expenses found. Add some expenses! 
+    //   <button onClick={() => { redirectFunc() }} className="text-blue-500 hover:underline p-2 m-2 bg-gray-100 hover:cursor-pointer">Add Expense</button>
+    //   </p>
+    return (
+      <EmptyState />
+    );
   }
 
   // Function to format the date

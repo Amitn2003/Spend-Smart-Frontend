@@ -1,16 +1,22 @@
-const CACHE_NAME = "budget-expense-cache-v2";
+const CACHE_NAME = "budget-expense-cache-v3";
 
 const urlsToCache = [
   "/",
   "/index.html",
   "/manifest.json",
-  "/icons/icon-192x192.png",
-  "/icons/icon-512x512.png",
+  "/icon-192x192.png",
+  "/icon-512x512.png",
   "/dashboard",
+  "/login-cat.jpg",
+  "/register-cat.jpg",
+  "/cat-confusion.jpg",
   "/add",
+  "/login",
   "/profile",
   "/settings",
   "/login",
+  "/favicon.ico",
+  "/logo.png",
   "/register"
 ];
 
